@@ -1,0 +1,3 @@
+wordcloud==1.8.1
+pandas==1.4.4
+pymarc4.2.0
