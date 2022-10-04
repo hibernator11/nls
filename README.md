@@ -10,3 +10,5 @@ These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the desc
 - [MARCXML extraction to CSV](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-DataExtraction.ipynb)
 - [Data analysis with pandas](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-Analysis.ipynb) 
 - [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-WordcloudSummary.ipynb)
+
+<img src="images/wordcloud.png">
