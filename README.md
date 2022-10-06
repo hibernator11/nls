@@ -12,3 +12,11 @@ These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the desc
 - [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-WordcloudSummary.ipynb)
 
 <img src="images/wordcloud.png">
+
+
+### Transformation to RDF
+
+The transformation to RDF has been performed using the tool Open Refine (version 3.6.2) and including the RDF transform extension.
+
+- https://openrefine.org/download.html
+- https://github.com/AtesComp/rdf-transform/releases
