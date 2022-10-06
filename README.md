@@ -20,3 +20,9 @@ The transformation to RDF has been performed using the tool Open Refine (version
 
 - https://openrefine.org/download.html
 - https://github.com/AtesComp/rdf-transform/releases
+
+
+### References
+
+- https://www.loc.gov/marc/bibliographic/bd040.html
+- https://movingimage.nls.uk/
