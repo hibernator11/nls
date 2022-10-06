@@ -13,6 +13,11 @@ These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the desc
 
 <img src="images/wordcloud.png">
 
+The transformation is based on the vocabulary [schema.org](https://schema.org/), using the entity [VideoObject](https://schema.org/VideoObject).
+
+<img src="images/transformationMovingImageArchive.png">
+
+
 
 ### Transformation to RDF
 
