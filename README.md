@@ -19,6 +19,8 @@ The transformation is based on the vocabulary [schema.org](https://schema.org/),
 
 <img src="images/transformationMovingImageArchive.png">
 
+<img src="images/map-visualisation.png">
+
 
 
 ### Transformation to RDF
