@@ -21,7 +21,7 @@ The transformation is based on the vocabulary [schema.org](https://schema.org/),
 
 
 ### Map visualisation
-Several approaches have been followed to create a map visualisation to show the locations named in the metadata provided in the dataset. First, the Python library folium has been used to create a map. 
+Several approaches have been followed to create a map visualisation to show the locations named in the metadata provided in the dataset. First, the [Python library folium](http://python-visualization.github.io/folium/) has been used to create a map. 
 
 <img width="50%" src="images/map-visualisation.png">
 
@@ -47,10 +47,6 @@ The transformation to RDF has been performed using the tool Open Refine (version
 
 - https://openrefine.org/download.html
 - https://github.com/AtesComp/rdf-transform/releases
-
-
-### Datasets 
-
 
 
 
