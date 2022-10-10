@@ -7,9 +7,11 @@
 
 These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the descriptive metadata from the [Moving Image Archive](https://data.nls.uk/data/metadata-collections/moving-image-archive/) catalogue, which is Scotland’s national collection of moving images.
 
-- [MARCXML extraction to CSV](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-DataExtraction.ipynb)
-- [Data analysis with pandas](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-Analysis.ipynb) 
-- [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/MovingImageArchive-WordcloudSummary.ipynb)
+- [MARCXML extraction to CSV](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-DataExtraction.ipynb)
+- [Data analysis with pandas](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Analysis.ipynb) 
+- [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-WordcloudSummary.ipynb)
+- [Enrichment with Wikidata and Geonames](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Enrichment.ipynb)
+- [Map visualisation](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-GeographicLocations.ipynb)
 
 <img src="images/wordcloud.png">
 
@@ -25,6 +27,12 @@ The transformation to RDF has been performed using the tool Open Refine (version
 
 - https://openrefine.org/download.html
 - https://github.com/AtesComp/rdf-transform/releases
+
+
+### Datasets 
+
+
+
 
 
 ### References
