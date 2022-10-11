@@ -12,6 +12,8 @@ These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the desc
 - [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-WordcloudSummary.ipynb)
 - [Enrichment with Wikidata and Geonames](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Enrichment.ipynb)
 - [Map visualisation](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-GeographicLocations.ipynb)
+- [SPARQL analysis](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-SPARQLAnalysisDataset.ipynb)
+
 
 <img src="images/wordcloud.png">
 
