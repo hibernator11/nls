@@ -3850,5 +3850,3684 @@
         }
       ]
     }
+  },
+  {
+    "op": "rdf-transform/save-rdf-transform",
+    "rdf-transform": {
+      "extension": "RDFTransform",
+      "version": "2.2.0",
+      "namespaces": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/"
+      },
+      "baseIRI": "http://example.org/",
+      "subjectMappings": [
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "link"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "value.replace(\"http://movingimage.nls.uk\",\"\")"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "VideoObject"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "title"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creator"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "datePublished"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "date"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "duration"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "extent"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "('PT'+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[0]+\"M\"+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[1].trim()+'S').replace(\"M00\", \"M0\").replace(\"secs)S\", \"\")"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creditText"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "credits"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "",
+              "valueSource": {
+                "source": "constant",
+                "constant": "subjects"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "subjects"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "abstract"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "summary"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "videoQuality"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "details"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "identifier"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "link"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 1"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "rdf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "type"
+              }
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "sourceOrganization"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "record_id"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "\"organisation/nls\""
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 2"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 3"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 4"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 5"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 6"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 7"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 8"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 9"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 10"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 11"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 12"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 13"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 14"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 15"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 16"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "constant",
+            "constant": "http://example.org/organisation/nls"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Organization"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "url"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "logo"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/images/nls-logo.png"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "National Library of Scotland"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-transform/save-rdf-transform",
+    "rdf-transform": {
+      "extension": "RDFTransform",
+      "version": "2.2.0",
+      "namespaces": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+      },
+      "baseIRI": "http://example.org/",
+      "subjectMappings": [
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "link"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "value.replace(\"http://movingimage.nls.uk\",\"\")"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "VideoObject"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "title"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creator"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase())"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "datePublished"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "date"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "duration"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "extent"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "('PT'+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[0]+\"M\"+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[1].trim()+'S').replace(\"M00\", \"M0\").replace(\"secs)S\", \"\")"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creditText"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "credits"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "",
+              "valueSource": {
+                "source": "constant",
+                "constant": "subjects"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "subjects"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "abstract"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "summary"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "videoQuality"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "details"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "identifier"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "link"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 1"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "rdf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "type"
+              }
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "sourceOrganization"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "record_id"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "\"organisation/nls\""
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 2"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 3"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 4"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 5"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 6"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 7"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 8"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 9"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 10"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 11"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 12"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 13"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 14"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 15"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 16"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "constant",
+            "constant": "http://example.org/organisation/nls"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Organization"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "url"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "logo"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/images/nls-logo.png"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "National Library of Scotland"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "author"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase())"
+          },
+          "typeMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Agent"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-transform/save-rdf-transform",
+    "rdf-transform": {
+      "extension": "RDFTransform",
+      "version": "2.2.0",
+      "namespaces": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+      },
+      "baseIRI": "http://example.org/",
+      "subjectMappings": [
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "link"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "value.replace(\"http://movingimage.nls.uk\",\"\")"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "VideoObject"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "title"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creator"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim())"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "datePublished"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "date"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "duration"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "extent"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "('PT'+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[0]+\"M\"+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[1].trim()+'S').replace(\"M00\", \"M0\").replace(\"secs)S\", \"\")"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creditText"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "credits"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "",
+              "valueSource": {
+                "source": "constant",
+                "constant": "subjects"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "subjects"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "abstract"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "summary"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "videoQuality"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "details"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "identifier"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "link"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 1"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "rdf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "type"
+              }
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "sourceOrganization"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "record_id"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "\"organisation/nls\""
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 2"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 3"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 4"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 5"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 6"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 7"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 8"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 9"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 10"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 11"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 12"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 13"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 14"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 15"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 16"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "constant",
+            "constant": "http://example.org/organisation/nls"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Organization"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "url"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "logo"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/images/nls-logo.png"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "National Library of Scotland"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "author"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase())"
+          },
+          "typeMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Agent"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-transform/save-rdf-transform",
+    "rdf-transform": {
+      "extension": "RDFTransform",
+      "version": "2.2.0",
+      "namespaces": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+      },
+      "baseIRI": "http://example.org/",
+      "subjectMappings": [
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "link"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "value.replace(\"http://movingimage.nls.uk\",\"\")"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "VideoObject"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "title"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creator"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim())"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "datePublished"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "date"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "duration"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "extent"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "('PT'+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[0]+\"M\"+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[1].trim()+'S').replace(\"M00\", \"M0\").replace(\"secs)S\", \"\")"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creditText"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "credits"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "",
+              "valueSource": {
+                "source": "constant",
+                "constant": "subjects"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "subjects"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "abstract"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "summary"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "videoQuality"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "details"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "identifier"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "link"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 1"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "rdf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "type"
+              }
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "sourceOrganization"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "record_id"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "\"organisation/nls\""
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 2"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 3"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 4"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 5"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 6"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 7"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 8"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 9"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 10"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 11"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 12"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 13"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 14"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 15"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 16"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "constant",
+            "constant": "http://example.org/organisation/nls"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Organization"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "url"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "logo"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/images/nls-logo.png"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "National Library of Scotland"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "author"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim().substring(0, value.indexOf(\"/\")), value.replace(\")\", \"\").replace(\"(\", \"\").replace(\".\", \"\").replace(\"‘\", \"\").replace(\",\", \"\").replace(\" \", \"\").toLowercase().trim())"
+          },
+          "typeMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Agent"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "rdf-transform/save-rdf-transform",
+    "rdf-transform": {
+      "extension": "RDFTransform",
+      "version": "2.2.0",
+      "namespaces": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+      },
+      "baseIRI": "http://example.org/",
+      "subjectMappings": [
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "link"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "value.replace(\"http://movingimage.nls.uk\",\"\")"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "VideoObject"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "title"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creator"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replaceChars(\"’.(),‘ \", \"\").toLowercase().substring(0, value.indexOf(\"/\").trim()), value.replaceChars(\"’.(),‘ \", \"\").toLowercase().trim())"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "datePublished"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "date"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "duration"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "extent"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "('PT'+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[0]+\"M\"+value.replace(\"(\", \"\").replace(\"mins) : \", \"\").split(\":\")[1].trim()+'S').replace(\"M00\", \"M0\").replace(\"secs)S\", \"\")"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "creditText"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "credits"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "",
+              "valueSource": {
+                "source": "constant",
+                "constant": "subjects"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "subjects"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "abstract"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "summary"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "videoQuality"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "details"
+                  },
+                  "valueType": {
+                    "type": "language_literal",
+                    "language": "en"
+                  }
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "identifier"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "link"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 1"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "rdf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "type"
+              }
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "sourceOrganization"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "record_id"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "\"organisation/nls\""
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 2"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 3"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 4"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 5"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 6"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 7"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 8"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 9"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 10"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 11"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 12"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 13"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 14"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 15"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "dcterms",
+              "valueSource": {
+                "source": "constant",
+                "constant": "spatial"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "geographicNames 16"
+                  },
+                  "expression": {
+                    "language": "grel",
+                    "code": "'location/' + value.toLowercase().trim()"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "constant",
+            "constant": "http://example.org/organisation/nls"
+          },
+          "typeMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Organization"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "url"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "logo"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "https://www.nls.uk/images/nls-logo.png"
+                  },
+                  "valueType": {
+                    "type": "iri"
+                  },
+                  "typeMappings": [],
+                  "propertyMappings": []
+                }
+              ]
+            },
+            {
+              "prefix": "schema",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "National Library of Scotland"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valueSource": {
+            "source": "column",
+            "columnName": "author"
+          },
+          "expression": {
+            "language": "grel",
+            "code": "'author/' + if(value.substring(0, value.indexOf(\"/\"))>0,value.replaceChars(\"’.(),‘ \", \"\").toLowercase().substring(0, value.indexOf(\"/\").trim()), value.replaceChars(\"’.(),‘ \", \"\").toLowercase().trim())"
+          },
+          "typeMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "Agent"
+              }
+            }
+          ],
+          "propertyMappings": [
+            {
+              "prefix": "foaf",
+              "valueSource": {
+                "source": "constant",
+                "constant": "name"
+              },
+              "objectMappings": [
+                {
+                  "valueSource": {
+                    "source": "column",
+                    "columnName": "author"
+                  },
+                  "valueType": {
+                    "type": "literal"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
