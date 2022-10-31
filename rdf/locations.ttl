@@ -1,0 +1,210 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<https://example.org/location/aberdeen> owl:sameAs <https://www.geonames.org/2657832>,
+        <https://www.wikidata.org/wiki/Q36405> ;
+    wgs84_pos:lat "57.14369" ;
+    wgs84_pos:long "-2.09814" .
+
+<https://example.org/location/aberdeenshire> owl:sameAs <https://www.geonames.org/2657830>,
+        <https://www.wikidata.org/wiki/Q189912> ;
+    wgs84_pos:lat "57.16667" ;
+    wgs84_pos:long "-2.66667" .
+
+<https://example.org/location/angus> owl:sameAs <https://www.geonames.org/2657306>,
+        <https://www.wikidata.org/wiki/Q202177> ;
+    wgs84_pos:lat "56.66667" ;
+    wgs84_pos:long "-2.91667" .
+
+<https://example.org/location/argyllshire> owl:sameAs <https://www.geonames.org/2657088>,
+        <https://www.wikidata.org/wiki/Q652539> ;
+    wgs84_pos:lat "56.25" ;
+    wgs84_pos:long "-5.25" .
+
+<https://example.org/location/ayrshire> owl:sameAs <https://www.geonames.org/2656700>,
+        <https://www.wikidata.org/wiki/Q793283> ;
+    wgs84_pos:lat "55.5" ;
+    wgs84_pos:long "-4.5" .
+
+<https://example.org/location/banff> owl:sameAs <https://www.geonames.org/2656402>,
+        <https://www.wikidata.org/wiki/Q54809> ;
+    wgs84_pos:lat "57.66477" ;
+    wgs84_pos:long "-2.52964" .
+
+<https://example.org/location/berwickshire> owl:sameAs <https://www.geonames.org/2655820>,
+        <https://www.wikidata.org/wiki/Q786649> ;
+    wgs84_pos:lat "55.75" ;
+    wgs84_pos:long "-2.5" .
+
+<https://example.org/location/borders> owl:sameAs <https://www.wikidata.org/wiki/Q9177476> ;
+    wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/bute> owl:sameAs <https://www.geonames.org/2654168>,
+        <https://www.wikidata.org/wiki/Q1147435> ;
+    wgs84_pos:lat "55.83333" ;
+    wgs84_pos:long "-5.1" .
+
+<https://example.org/location/caithness> owl:sameAs <https://www.geonames.org/2654041>,
+        <https://www.wikidata.org/wiki/Q864668> ;
+    wgs84_pos:lat "58.41667" ;
+    wgs84_pos:long "-3.5" .
+
+<https://example.org/location/clackmannanshire> owl:sameAs <https://www.geonames.org/2652975>,
+        <https://www.wikidata.org/wiki/Q207268> ;
+    wgs84_pos:lat "56.16667" ;
+    wgs84_pos:long "-3.75" .
+
+<https://example.org/location/dumfriesshire> owl:sameAs <https://www.geonames.org/2650795>,
+        <https://www.wikidata.org/wiki/Q1247384> ;
+    wgs84_pos:lat "55.16667" ;
+    wgs84_pos:long "-3.5" .
+
+<https://example.org/location/dunbartonshire> owl:sameAs <https://www.geonames.org/7280022>,
+        <https://www.wikidata.org/wiki/Q17582129> ;
+    wgs84_pos:lat "56.12639" ;
+    wgs84_pos:long "-4.42069" .
+
+<https://example.org/location/dundee> owl:sameAs <https://www.geonames.org/2650752>,
+        <https://www.wikidata.org/wiki/Q123709> ;
+    wgs84_pos:lat "56.46913" ;
+    wgs84_pos:long "-2.97489" .
+
+<https://example.org/location/eastlothian> owl:sameAs <https://www.geonames.org/2650386>,
+        <https://www.wikidata.org/wiki/Q207257> ;
+    wgs84_pos:lat "55.91667" ;
+    wgs84_pos:long "-2.75" .
+
+<https://example.org/location/edinburgh> owl:sameAs <https://www.geonames.org/2650225>,
+        <https://www.wikidata.org/wiki/Q23436> ;
+    wgs84_pos:lat "55.95206" ;
+    wgs84_pos:long "-3.19648" .
+
+<https://example.org/location/fife> owl:sameAs <https://www.geonames.org/2649469>,
+        <https://www.wikidata.org/wiki/Q201149> ;
+    wgs84_pos:lat "56.25" ;
+    wgs84_pos:long "-3.16667" .
+
+<https://example.org/location/forthriver> owl:sameAs <https://www.geonames.org/2649177>,
+        <https://www.wikidata.org/wiki/Q2421> ;
+    wgs84_pos:lat "56.0475" ;
+    wgs84_pos:long "-3.7072" .
+
+<https://example.org/location/glasgow> owl:sameAs <https://www.geonames.org/2648579>,
+        <https://www.wikidata.org/wiki/Q4093> ;
+    wgs84_pos:lat "55.86515" ;
+    wgs84_pos:long "-4.25763" .
+
+<https://example.org/location/gorbals,the> owl:sameAs <https://www.wikidata.org/wiki/Q3643362> ;
+    wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/highlands,the> owl:sameAs <https://www.geonames.org/2646943>,
+        <https://www.wikidata.org/wiki/Q106652> ;
+    wgs84_pos:lat "57.12" ;
+    wgs84_pos:long "-4.71" .
+
+<https://example.org/location/innerhebrides> owl:sameAs <https://www.geonames.org/2646177>,
+        <https://www.wikidata.org/wiki/Q81052> ;
+    wgs84_pos:lat "56.5" ;
+    wgs84_pos:long "-6.0" .
+
+<https://example.org/location/invernesshire> wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/kincardineshire> owl:sameAs <https://www.geonames.org/2645521>,
+        <https://www.wikidata.org/wiki/Q376914> ;
+    wgs84_pos:lat "56.91667" ;
+    wgs84_pos:long "-2.5" .
+
+<https://example.org/location/kinrosshire> wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/kirkudbrightshire> wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/lanarkshire> owl:sameAs <https://www.geonames.org/2644975>,
+        <https://www.wikidata.org/wiki/Q530296> ;
+    wgs84_pos:lat "55.58333" ;
+    wgs84_pos:long "-3.83333" .
+
+<https://example.org/location/midlothian> owl:sameAs <https://www.geonames.org/2642559>,
+        <https://www.wikidata.org/wiki/Q206934> ;
+    wgs84_pos:lat "55.82347" ;
+    wgs84_pos:long "-3.09334" .
+
+<https://example.org/location/morayshire> owl:sameAs <https://www.wikidata.org/wiki/Q1247435> ;
+    wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/nairn> owl:sameAs <https://www.geonames.org/2641910>,
+        <https://www.wikidata.org/wiki/Q980084> ;
+    wgs84_pos:lat "57.58094" ;
+    wgs84_pos:long "-3.87973" .
+
+<https://example.org/location/orkneyislands> owl:sameAs <https://www.geonames.org/2640923>,
+        <https://www.wikidata.org/wiki/Q100166> ;
+    wgs84_pos:lat "59.0" ;
+    wgs84_pos:long "-3.0" .
+
+<https://example.org/location/outerhebrides> owl:sameAs <https://www.geonames.org/2640801>,
+        <https://www.wikidata.org/wiki/Q80967> ;
+    wgs84_pos:lat "57.75" ;
+    wgs84_pos:long "-7.0" .
+
+<https://example.org/location/peebles-shire> wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/perth> owl:sameAs <https://www.geonames.org/2640358>,
+        <https://www.wikidata.org/wiki/Q203000> ;
+    wgs84_pos:lat "56.39522" ;
+    wgs84_pos:long "-3.43139" .
+
+<https://example.org/location/renfrewshire> owl:sameAs <https://www.geonames.org/2639494>,
+        <https://www.wikidata.org/wiki/Q211091> ;
+    wgs84_pos:lat "55.83333" ;
+    wgs84_pos:long "-4.5" .
+
+<https://example.org/location/ross-shire> owl:sameAs <https://www.wikidata.org/wiki/Q978599> ;
+    wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/roxburghshire> owl:sameAs <https://www.geonames.org/2639033>,
+        <https://www.wikidata.org/wiki/Q664892> ;
+    wgs84_pos:lat "55.5" ;
+    wgs84_pos:long "-2.5" .
+
+<https://example.org/location/selkirkshire> owl:sameAs <https://www.geonames.org/2638228>,
+        <https://www.wikidata.org/wiki/Q1247396> ;
+    wgs84_pos:lat "55.5" ;
+    wgs84_pos:long "-3.0" .
+
+<https://example.org/location/shetlandislands> owl:sameAs <https://www.geonames.org/2638010>,
+        <https://www.wikidata.org/wiki/Q47134> ;
+    wgs84_pos:lat "60.33333" ;
+    wgs84_pos:long "-1.33333" .
+
+<https://example.org/location/stirling> owl:sameAs <https://www.geonames.org/2636910>,
+        <https://www.wikidata.org/wiki/Q182923> ;
+    wgs84_pos:lat "56.11903" ;
+    wgs84_pos:long "-3.93682" .
+
+<https://example.org/location/stirlingshire> owl:sameAs <https://www.wikidata.org/wiki/Q1229763> ;
+    wgs84_pos:lat "nan" ;
+    wgs84_pos:long "nan" .
+
+<https://example.org/location/sutherland> owl:sameAs <https://www.geonames.org/2636507>,
+        <https://www.wikidata.org/wiki/Q1061313> ;
+    wgs84_pos:lat "58.25" ;
+    wgs84_pos:long "-4.5" .
+
+<https://example.org/location/westlothian> owl:sameAs <https://www.geonames.org/2634354>,
+        <https://www.wikidata.org/wiki/Q204940> ;
+    wgs84_pos:lat "55.91667" ;
+    wgs84_pos:long "-3.5" .
+
+<https://example.org/location/wigtownshire> owl:sameAs <https://www.geonames.org/2633928>,
+        <https://www.wikidata.org/wiki/Q550606> ;
+    wgs84_pos:lat "54.6" ;
+    wgs84_pos:long "-4.83333" .
+
