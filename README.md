@@ -1,18 +1,27 @@
-# nls
+# National Librarian’s Research Fellowship in Digital Scholarship 2022-23
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hibernator11/nls/HEAD)
+
+Created in October-December 2022 for the National Library of Scotland's Data Foundry by [Gustavo Candela, National Librarian’s Research Fellowship in Digital Scholarship 2022-23](https://data.nls.uk/projects/the-national-librarians-research-fellowship-in-digital-scholarship-2022-23/)
 
 
 ### Moving Image Archive
 
-These examples of [Jupyter Notebooks](http://jupyter.org/) are based on the descriptive metadata from the [Moving Image Archive](https://data.nls.uk/data/metadata-collections/moving-image-archive/) catalogue, which is Scotland’s national collection of moving images.
+This dataset represents the descriptive metadata from the Moving Image Archive catalogue, which is Scotland’s national collection of moving images.
 
-- [MARCXML extraction to CSV](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-DataExtraction.ipynb)
-- [Data analysis with pandas](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Analysis.ipynb) 
-- [Word cloud based on the summary metadata](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-WordcloudSummary.ipynb)
-- [Enrichment with Wikidata and Geonames](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Enrichment.ipynb)
-- [Map visualisation](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-GeographicLocations.ipynb)
-- [SPARQL analysis](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-SPARQLAnalysisDataset.ipynb)
+- Data format: metadata available as MARCXML and Dublin Core
+- Data source: https://data.nls.uk/data/metadata-collections/moving-image-archive/
+
+The Jupyter Notebooks include a set of examples to reproduce the transformation to RDF and enrichment with external repositories:
+
+- [Data extraction](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-DataExtraction.ipynb)
+- [Exploring the CSV text file](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-ExploringCSV.ipynb)
+- [Transformation to LOD](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-TransformationToLOD.ipynb)
+- [Enrichment](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-Enrichment.ipynb)
+- [Exploring with SPARQL](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-ExploringSPARQL.ipynb)
+- [Exploring geographic locations](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-ExploringGeographicLocations.ipynb)
+- [Data Quality assessment](https://nbviewer.org/github/hibernator11/nls/blob/master/notebooks/MovingImageArchive-DataQuality.ipynb)
+
 
 
 <img src="images/wordcloud.png">
@@ -22,7 +31,7 @@ The transformation is based on the vocabulary [schema.org](https://schema.org/),
 <img src="images/transformationMovingImageArchive.png">
 
 
-### Map visualisation
+#### Map visualisation
 Several approaches have been followed to create a map visualisation to show the locations named in the metadata provided in the dataset. First, the [Python library folium](http://python-visualization.github.io/folium/) has been used to create a map. 
 
 <img width="50%" src="images/map-visualisation.png">
@@ -44,15 +53,6 @@ WHERE {
     SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 } GROUP BY ?r ?rLabel ?img
 ```
-
-### Transformation to RDF
-
-The transformation to RDF has been performed using the tool Open Refine (version 3.6.2) and including the RDF transform extension.
-
-- https://openrefine.org/download.html
-- https://github.com/AtesComp/rdf-transform/releases
-
-
 
 
 ### References
