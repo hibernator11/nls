@@ -1,0 +1,65 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://example.org/>
+PREFIX weso-s: <http://weso.es/shapes/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+weso-s:Person
+{
+   rdf:type  [foaf:Person]  ;                                  # 100.0 %
+   rdf:type  [schema:Person]  ;                                # 100.0 %
+   foaf:name  xsd:string  ;                                    # 100.0 %
+   skos:prefLabel  xsd:string  ;                               # 100.0 %
+   schema:name  xsd:string                                     # 100.0 %
+}
+
+
+weso-s:Organization
+{
+   rdf:type  [foaf:Organization]  ;                            # 100.0 %
+   rdf:type  [schema:Organization]  ;                          # 100.0 %
+   schema:name  xsd:string  ;                                  # 100.0 %
+   foaf:name  xsd:string  ;                                    # 100.0 %
+   skos:prefLabel  xsd:string                                  # 100.0 %
+}
+
+
+weso-s:VideoObject
+{
+   rdf:type  [schema:VideoObject]  ;                           # 100.0 %
+   dc:identifier  IRI  ;                                       # 100.0 %
+   schema:sourceOrganization  IRI  ;                           # 100.0 %
+   schema:identifier  IRI  ;                                   # 100.0 %
+   schema:duration  xsd:string  ?;
+            # 99.99514751552795 % obj: xsd:string. Cardinality: {1}
+   schema:abstract  xsd:string  ?;
+            # 99.85927795031056 % obj: xsd:string. Cardinality: {1}
+   schema:name  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   dc:title  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   schema:videoQuality  xsd:string  ?
+            # 98.3113354037267 % obj: xsd:string. Cardinality: {1}
+}
+
+
+weso-s:Place
+{
+   rdf:type  [schema:Place]  ;                                 # 100.0 %
+   rdf:type  [edm:Place]  ;                                    # 100.0 %
+   skos:prefLabel  xsd:string  ;                               # 100.0 %
+   schema:name  xsd:string  ;                                  # 100.0 %
+   owl:sameAs  IRI  *
+            # 90.9090909090909 % obj: IRI. Cardinality: +
+}
+
+
