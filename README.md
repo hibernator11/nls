@@ -57,6 +57,25 @@ WHERE {
 ### Data quality assessment
 The RDF dataset has been assessed by means of SPARQL in several ways. For instance, counting the number of resources per type (e.g., person, organizatioonn, video, etc.) and comparing the results against the original sources. In addition, an innovative method to assess RDF repositories has been used based on [Shape Expressions (ShEx)](https://shexspec.github.io/primer/), a language for describing RDF graph structures. A ShEx schema describes constraints that RDF data graphs must meet in order to be considered conformant. A [ShEx schema](/shex/) has been created to describe the resources stored in the final RDF dataset.
 
+```
+shex:VideoObject
+{
+   rdf:type  [schema:VideoObject]  ;                           # 100.0 %
+   dc:identifier  IRI  ;                                       # 100.0 %
+   schema:sourceOrganization  IRI  ;                           # 100.0 %
+   schema:identifier  IRI  ;                                   # 100.0 %
+   schema:duration  xsd:string  ?;
+            # 99.99514751552795 % obj: xsd:string. Cardinality: {1}
+   schema:abstract  xsd:string  ?;
+            # 99.85927795031056 % obj: xsd:string. Cardinality: {1}
+   schema:name  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   dc:title  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   schema:videoQuality  xsd:string  ?
+            # 98.3113354037267 % obj: xsd:string. Cardinality: {1}
+}
+```
 
 ### References
 
