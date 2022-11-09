@@ -1,3 +1,4 @@
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,7 +15,17 @@
     dcterms:source <https://data.nls.uk/data/metadata-collections/moving-image-archive/>;
     dcterms:source <https://github.com/hibernator11/nls>;
     dcterms:modified "2022-11-09"^^xsd:date;
+    void:feature <http://www.w3.org/ns/formats/Turtle>;
+    void:dataDump <https://raw.githubusercontent.com/hibernator11/nls/master/rdf/datasetEnriched.ttl>;
+    void:vocabulary <http://xmlns.com/foaf/0.1/>;
+    void:vocabulary <http://www.europeana.eu/schemas/edm/>;
+    void:vocabulary <https://schema.org/>;
+    void:classes 7;
+    void:exampleResource <https://example.org/film/0001>;
+    void:properties 23;
+    void:triples 263476;
     .
+
 :NLS a foaf:Organization;
     rdfs:label "National Library of Scotland";
     foaf:name "National Library of Scotland";
