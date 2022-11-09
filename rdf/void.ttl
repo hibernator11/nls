@@ -1,0 +1,29 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:MovingImageArchive a void:Dataset;
+    dcterms:title "Moving Image Archive";
+    dcterms:description "RDF data extracted from the Moving Image Archive dataset";
+    dcterms:license <https://creativecommons.org/publicdomain/mark/1.0/>;
+    dcterms:publisher :NLS;	
+    dcterms:contributor :GC;
+    dcterms:source <https://data.nls.uk/data/metadata-collections/moving-image-archive/>;
+    dcterms:source <https://github.com/hibernator11/nls>;
+    dcterms:modified "2022-11-09"^^xsd:date;
+    .
+:NLS a foaf:Organization;
+    rdfs:label "National Library of Scotland";
+    foaf:name "National Library of Scotland";
+    foaf:homepage <https://data.nls.uk/>;
+    .
+
+:GC a foaf:Person;
+    rdfs:label "Gustavo Candela";
+    foaf:name "Gustavo Candela";
+    foaf:homepage <https://cvnet.cpd.ua.es/curriculum-breve/en/candela-romero-gustavo/10165>;
+    owl:sameAs <https://www.wikidata.org/wiki/Q114755779>;
+    .
