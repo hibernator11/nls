@@ -9,28 +9,28 @@ To explore the collections listed below in live Jupyter Notebooks, open them her
 To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#setup).
 
 ## Table of Contents
-    [Datasets](#datasets)
-    [Setup](#setup)
-    Suggested Citations
-    Moving Image Archive
-    National Bibliography of Scotland
-    [References](#references)
+- [Datasets](#datasets)
+- [Setup](#setup)
+- [Suggested Citations](#suggested-citations)
+- [Moving Image Archive](#moving-image-archive)
+- [National Bibliography of Scotland](#national-bibliography-of-scotland)
+- [References](#references)
 
 ## Datasets
 
 ### Collection 1: Moving Image Archive
-    Owner: National Library of Scotland
-    Creator: National Library of Scotland
-    Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/moving-image-archive/)
-    Licence: [Public Domain](https://creativecommons.org/publicdomain/mark/1.0/)
+- Owner: National Library of Scotland
+- Creator: National Library of Scotland
+- Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/moving-image-archive/)
+- Licence: [Public Domain](https://creativecommons.org/publicdomain/mark/1.0/)
 
 ### Collection 2: The National Bibliography of Scotland (version 2)
-    Owner: National Library of Scotland
-    Creator: National Library of Scotland
-    Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/national-bibliography-of-scotland/)
-    DOI: https://doi.org/10.34812/7cda-ep21
-    Date created: 2022
-    Licence: Creative Commons Attribution 4.0 International ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))
+- Owner: National Library of Scotland
+- Creator: National Library of Scotland
+- Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/national-bibliography-of-scotland/)
+- DOI: https://doi.org/10.34812/7cda-ep21
+- Date created: 2022
+- Licence: Creative Commons Attribution 4.0 International ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))
 
 
 ## Setup
