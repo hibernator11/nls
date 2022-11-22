@@ -1,11 +1,47 @@
 # National Librarian’s Research Fellowship in Digital Scholarship 2022-23
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hibernator11/nls/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hibernator11/nls-fellowship-2022-23/HEAD)
 
 Created in October-December 2022 for the National Library of Scotland's Data Foundry by [Gustavo Candela, National Librarian’s Research Fellowship in Digital Scholarship 2022-23](https://data.nls.uk/projects/the-national-librarians-research-fellowship-in-digital-scholarship-2022-23/)
 
+To explore the collections listed below in live Jupyter Notebooks, open them here in [Binder](https://mybinder.org/v2/gh/hibernator11/nls-fellowship-2022-23/HEAD) (please note this may take several minutes to load).
 
-### Moving Image Archive
+To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#setup).
+
+## Table of Contents
+    [Datasets](#datasets)
+    [Setup](#setup)
+    Suggested Citations
+    Moving Image Archive
+    National Bibliography of Scotland
+    [References](#references)
+
+## Datasets
+
+### Collection 1: Moving Image Archive
+    Owner: National Library of Scotland
+    Creator: National Library of Scotland
+    Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/moving-image-archive/)
+    Licence: [Public Domain](https://creativecommons.org/publicdomain/mark/1.0/)
+
+### Collection 2: The National Bibliography of Scotland (version 2)
+    Owner: National Library of Scotland
+    Creator: National Library of Scotland
+    Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/national-bibliography-of-scotland/)
+    DOI: https://doi.org/10.34812/7cda-ep21
+    Date created: 2022
+    Licence: Creative Commons Attribution 4.0 International ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))
+
+
+## Setup
+
+
+
+## Suggested Citations
+
+
+
+## Moving Image Archive
 
 This dataset represents the descriptive metadata from the Moving Image Archive catalogue, which is Scotland’s national collection of moving images.
 
@@ -31,7 +67,7 @@ The transformation is based on the vocabulary [schema.org](https://schema.org/),
 <img src="images/transformationMovingImageArchive.png">
 
 
-#### Map visualisation
+### Map visualisation
 Several approaches have been followed to create a map visualisation to show the locations named in the metadata provided in the dataset. First, the [Python library folium](http://python-visualization.github.io/folium/) has been used to create a map. 
 
 <img width="50%" src="images/map-visualisation.png">
@@ -77,7 +113,7 @@ shex:VideoObject
 }
 ```
 
-### References
+## References
 
 - https://movingimage.nls.uk/
 - https://www.loc.gov/marc/bibliographic/bd040.html
