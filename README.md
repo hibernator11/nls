@@ -8,7 +8,7 @@ To explore the collections listed below in live Jupyter Notebooks, open them her
 
 To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#setup).
 
-## Table of Contents
+### Table of Contents
 - [Datasets](#datasets)
 - [Setup](#setup)
 - [Suggested Citations](#suggested-citations)
