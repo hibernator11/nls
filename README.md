@@ -34,7 +34,60 @@ To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#se
 
 
 ## Setup
+To clone the Git repository and run the Jupyter Notebooks on your own machine, follow the steps below according to your operating system.
 
+**For Mac and Linux**
+
+```
+# Install (if not yet installed) the Python venv (virtual environment) module
+python3 -m pip install --user virtualenv
+
+# Create a virtual environment (you can change 'env' to a name of your choice)
+python3 -m venv env
+
+# Activate the environment
+source env/bin/activate
+
+# Clone the repository
+git clone https://github.com/NLS-Digital-Scholarship/nls-fellowship-2022-23.git
+
+# Enter and initialize the repository
+cd nls-fellowship-2022-23
+git init
+
+# Install the required packages
+python3 -m pip install -r requirements.txt
+
+# When you're finished, deactivate the environment (simply activate it once
+# more and enter the repository if when you wish to resume your work)
+deactivate
+```
+
+**For Window**
+```
+# Install (if not yet installed) the Python venv (virtual environment) module
+py -m pip install --user virtualenv
+
+# Create a virtual environment (you can change 'env' to a name of your choice)
+py -m venv env
+
+# Activate the environment
+.\env\Scripts\activate
+
+# Clone the repository
+git clone https://github.com/NLS-Digital-Scholarship/nls-fellowship-2022-23.git
+
+# Enter and initialize the repository
+cd nls-fellowship-2022-23
+git init
+
+# Install the required packages
+py -m pip install -r requirements.txt
+
+# When you're finished, deactivate the environment (simply activate it once
+# more and enter the repository if when you wish to resume your work)
+deactivate
+```
 
 
 ## Suggested Citations
