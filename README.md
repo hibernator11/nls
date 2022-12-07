@@ -177,3 +177,4 @@ The transformation process is based on the tool [marc2bibframe](https://github.c
 - https://movingimage.nls.uk/
 - https://www.loc.gov/marc/bibliographic/bd040.html
 - https://rdflib.readthedocs.io/en/stable/
+- https://github.com/lcnetdev/marc2bibframe2
