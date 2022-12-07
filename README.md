@@ -168,6 +168,8 @@ shex:VideoObject
 
 ## National Bibliography of Scotland
 
+The transformation process is based on the tool [marc2bibframe](https://github.com/lcnetdev/marc2bibframe2) that uses BIBFRAME as main vocabulary to describe the resources.
+
 <img src="images/transformation-nbs2.png">
 
 ## References
