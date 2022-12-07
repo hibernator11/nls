@@ -168,7 +168,7 @@ shex:VideoObject
 
 ## National Bibliography of Scotland
 
-<img src="images/transformation-nbs.png">
+<img src="images/transformation-nbs2.png">
 
 ## References
 
