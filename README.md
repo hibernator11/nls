@@ -178,3 +178,4 @@ The transformation process is based on the tool [marc2bibframe](https://github.c
 - https://www.loc.gov/marc/bibliographic/bd040.html
 - https://rdflib.readthedocs.io/en/stable/
 - https://github.com/lcnetdev/marc2bibframe2
+- https://jena.apache.org/documentation/tdb2/
