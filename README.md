@@ -172,7 +172,7 @@ The transformation process is based on the tool [marc2bibframe](https://github.c
 
 <img src="images/transformation-nbs2.png">
 
-The final RDF dataset can be generated and queried using as RDF storage system the TDB2 Apache Jena component provided in this [example](https://github.com/hibernator11/nls-jena-tdb).
+The final RDF dataset can be generated and queried using as RDF storage system the [TDB2 Apache Jena component](https://jena.apache.org/documentation/tdb2/) provided in this [example](https://github.com/hibernator11/nls-jena-tdb).
 
 ## References
 
