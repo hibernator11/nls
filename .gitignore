@@ -1,1 +1,8 @@
 .ipynb_checkpoints/
+data/nls-nbs-v2/
+data/output/NationalBibliographyScotland.csv
+data/output/nbs.csv.gz
+data/output/test.csv.gz
+rdf/nbs.zip
+rdf/nbs
+tools/marc2bibframe2
