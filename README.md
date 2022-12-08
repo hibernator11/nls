@@ -220,6 +220,9 @@ The data modelling is based on [BIBFRAME](https://www.loc.gov/bibframe/) as main
 
 <img src="images/data-model-nbs.png">
 
+Uniform titles are processed in order to create a bf:Hub resource including the title (240 $a), language (240 $l) and main author (100 $a).
+<img src="images/bf-hub.png">
+
 ### Loading the RDF
 In order to store the RDF and be able to query the information, a [Jena TDB RDF storage system](https://jena.apache.org/documentation/tdb2/) has been used. A [Java project](https://github.com/hibernator11/nls-jena-tdb) has been created in order to identify the classes and properties based on BIBFRAME.
 
