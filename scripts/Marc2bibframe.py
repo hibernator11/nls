@@ -12,9 +12,12 @@ from xml.etree import ElementTree
 
 ET.register_namespace('marc',"http://www.loc.gov/MARC21/slim") #some name
 
+# add the path to the dataset 
 filename = "../data/nls-nbs-v2/NBS_v2_validated_marcxml.xml"
 #filename = 'test.xml'
-xsl_filename = '../tools/marc2bibframe2/xsl/marc2bibframe2.xsl'
+
+# add the path to the XSLT file in the marc2bibframe2 project
+xsl_filename = "../tools/marc2bibframe2/xsl/marc2bibframe2.xsl"
 
 count = 0;
 
