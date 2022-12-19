@@ -13,8 +13,13 @@ from xml.etree import ElementTree
 ET.register_namespace('marc',"http://www.loc.gov/MARC21/slim") #some name
 
 # add the path to the dataset 
-filename = "../data/nls-nbs-v2/NBS_v2_validated_marcxml.xml"
+#filename = "../data/nls-nbs-v2/NBS_v2_validated_marcxml.xml"
+filename = "../data/boslit/BOSLIT_dataset.xml"
 #filename = 'test.xml'
+
+# path to RDF file output
+#output = "../rdf/nbs/nbs_output_"
+output = "../rdf/boslit/boslit_output_"
 
 # add the path to the XSLT file in the marc2bibframe2 project
 xsl_filename = "../tools/marc2bibframe2/xsl/marc2bibframe2.xsl"
@@ -33,7 +38,7 @@ for event, elem in ET.iterparse(filename, events=("start", "end")):
             transform = lxml.XSLT(xslt)
             result = transform(marc_record)
             
-            result.write_output("../rdf/nbs/nbs_output_"+ str(count) +".rdf.gz", compression=9)
+            result.write_output(output + str(count) +".rdf.gz", compression=9)
             count +=1;
             print(count)
             elem.clear()
