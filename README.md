@@ -13,7 +13,7 @@ To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#se
 - [Setup](#setup)
 - [Suggested Citations](#suggested-citations)
 - [Moving Image Archive](#moving-image-archive)
-- [National Bibliography of Scotland](#national-bibliography-of-scotland)
+- [National Bibliography of Scotland and BOSLIT](#national-bibliography-of-scotland-and-boslit)
 - [References](#references)
 
 ## Datasets
@@ -166,7 +166,7 @@ shex:VideoObject
 }
 ```
 
-## National Bibliography of Scotland
+## National Bibliography of Scotland and BOSLIT
 
 The transformation process is based on the tool [marc2bibframe](https://github.com/lcnetdev/marc2bibframe2) that uses BIBFRAME as main vocabulary to describe the resources.
 
