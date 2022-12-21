@@ -8,7 +8,7 @@ Created on Sun Dec 11 10:07:19 2022
 
 import requests
 
-filename = "../assessment/nbs-uris-list.txt"
+filename = "../assessment/boslit-uris-list.txt"
 
 urls = []
 errors = 0
