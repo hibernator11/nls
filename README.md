@@ -181,7 +181,7 @@ The transformation process is based on the tool [marc2bibframe](https://github.c
 The original metadata described in MARCXML is automatically transformed into BIBFRAME using the XSLT template provided by the tool [marc2bibframe2](https://github.com/lcnetdev/marc2bibframe2). Each record provided in the original dataset is extracted using a [Python script](scripts/Marc2bibframe.py). The final RDF dataset can be generated and queried using as RDF storage system the [TDB2 Apache Jena component](https://jena.apache.org/documentation/tdb2/) provided in this [Java project](https://github.com/hibernator11/nls-jena-tdb). In order to run the Java project, an [Apache Maven installation](https://maven.apache.org/install.html) is required.
 
 ### Generating the RDF
-In order to generate the RDF we need to download the dataset from the [Data Foundry](https://data.nls.uk/data/metadata-collections/national-bibliography-of-scotland/. In addition, we need to download the [marc2bibframe2](https://github.com/lcnetdev/marc2bibframe2).
+In order to generate the RDF we need to download the datasets from the [Data Foundry](https://data.nls.uk/data/metadata-collections/national-bibliography-of-scotland/). In addition, we need to download the [marc2bibframe2](https://github.com/lcnetdev/marc2bibframe2).
 
 Then, we need to setup the paths in the [Python script Marc2bibframe](scripts/Marc2bibframe.py):
 
@@ -231,9 +231,9 @@ Uniform titles (e.g., 130 and 240 MARC fields) are processed in order to create 
 <img src="images/bf-hub.png">
 
 ### Loading the RDF
-In order to store the RDF and be able to query the information, a [Jena TDB RDF storage system](https://jena.apache.org/documentation/tdb2/) has been used. A [Java project](https://github.com/hibernator11/nls-jena-tdb) has been created in order to identify the classes and properties based on BIBFRAME.
+In order to store the RDF and be able to query the information, a [Jena TDB RDF storage system](https://jena.apache.org/documentation/tdb2/) was used. A [Java project](https://github.com/hibernator11/nls-jena-tdb) was created in order to identify the classes and properties based on BIBFRAME.
 
-The following example of SPARQL query shows how to query the RDF dataset in order to identify works written by authors containing the label Stevenson, Robert Louis:
+The following example of SPARQL query shows how to query the RDF dataset in order to identify works written by authors containing the label *Stevenson, Robert Louis*:
 
 ```
 PREFIX bf:<http://id.loc.gov/ontologies/bibframe/> 
