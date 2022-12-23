@@ -32,7 +32,7 @@ To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#se
 - Date created: 2022
 - Licence: Creative Commons Attribution 4.0 International ([CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))
 
-### Collection 3: Bibliography of Scottish Literature in Translation 
+### Collection 3: Bibliography of Scottish Literature in Translation (BOSLIT)
 - Owner: National Library of Scotland
 - Creator: National Library of Scotland
 - Website: Visit the [NLS Data Foundry](https://data.nls.uk/data/metadata-collections/boslit/)
