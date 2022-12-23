@@ -14,6 +14,7 @@ To copy and work with the Jupyter Notebooks on your own machine, see [Setup](#se
 - [Suggested Citations](#suggested-citations)
 - [Moving Image Archive](#moving-image-archive)
 - [National Bibliography of Scotland and BOSLIT](#national-bibliography-of-scotland-and-boslit)
+- [Data quality assessment](#data-quality-assessment)
 - [References](#references)
 
 ## Datasets
@@ -149,29 +150,6 @@ WHERE {
 } GROUP BY ?r ?rLabel ?img
 ```
 
-### Data quality assessment
-The RDF dataset has been assessed by means of SPARQL in several ways. For instance, counting the number of resources per type (e.g., person, organizatioonn, video, etc.) and comparing the results against the original sources. In addition, an innovative method to assess RDF repositories has been used based on [Shape Expressions (ShEx)](https://shexspec.github.io/primer/), a language for describing RDF graph structures. A ShEx schema describes constraints that RDF data graphs must meet in order to be considered conformant. A [ShEx schema](/shex/) has been created to describe the resources stored in the final RDF dataset.
-
-```
-shex:VideoObject
-{
-   rdf:type  [schema:VideoObject]  ;                           # 100.0 %
-   dc:identifier  IRI  ;                                       # 100.0 %
-   schema:sourceOrganization  IRI  ;                           # 100.0 %
-   schema:identifier  IRI  ;                                   # 100.0 %
-   schema:duration  xsd:string  ?;
-            # 99.99514751552795 % obj: xsd:string. Cardinality: {1}
-   schema:abstract  xsd:string  ?;
-            # 99.85927795031056 % obj: xsd:string. Cardinality: {1}
-   schema:name  xsd:string  ?;
-            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
-   dc:title  xsd:string  ?;
-            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
-   schema:videoQuality  xsd:string  ?
-            # 98.3113354037267 % obj: xsd:string. Cardinality: {1}
-}
-```
-
 ## National Bibliography of Scotland and BOSLIT
 
 The transformation process is based on the tool [marc2bibframe](https://github.com/lcnetdev/marc2bibframe2) that uses BIBFRAME as main vocabulary to describe the resources.
@@ -246,6 +224,96 @@ WHERE {
 FILTER regex(str(?a), "http://") 
 FILTER regex(str(?label), "Stevenson, Robert Louis") 
 } LIMIT 10
+```
+
+## Data quality assessment
+The RDF datasets has been assessed by means of SPARQL in several ways using a data quality criteria provided by previous works. For instance, counting the number of resources per type (e.g., person, organizatioonn, video, etc.) and comparing the results against the original sources. In addition, an innovative method to assess RDF repositories has been used based on [Shape Expressions (ShEx)](https://shexspec.github.io/primer/), a language for describing RDF graph structures. A ShEx schema describes constraints that RDF data graphs must meet in order to be considered conformant. ShEx schemas define the node constraints to assess the triples found in an RDF dataset. A [ShEx schema](/shex/) has been created to describe the resources stored in the final RDF datasets:
+
+- [Moving Image Archive - schema:VideoObject](/shex/shaper_mia.shex)
+- [National Bibliography of Scotland & BOSLIT - bibframe:Agent - bibframe:Work](/shex/shaper_bibframe.shex)
+
+```
+shex:VideoObject
+{
+   rdf:type  [schema:VideoObject]  ;                           # 100.0 %
+   dc:identifier  IRI  ;                                       # 100.0 %
+   schema:sourceOrganization  IRI  ;                           # 100.0 %
+   schema:identifier  IRI  ;                                   # 100.0 %
+   schema:duration  xsd:string  ?;
+            # 99.99514751552795 % obj: xsd:string. Cardinality: {1}
+   schema:abstract  xsd:string  ?;
+            # 99.85927795031056 % obj: xsd:string. Cardinality: {1}
+   schema:name  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   dc:title  xsd:string  ?;
+            # 99.34006211180125 % obj: xsd:string. Cardinality: {1}
+   schema:videoQuality  xsd:string  ?
+            # 98.3113354037267 % obj: xsd:string. Cardinality: {1}
+}
+```
+
+
+```
+shex:Work
+{
+   rdf:type  [bibframe:Work]  ;                                # 100.0 %
+   bibframe:title  xsd:string  +;                              # 100.0 %
+            # 97.56637168141593 % obj: xsd:string. Cardinality: {1}
+   bibframe:hasInstance  IRI  ?;
+            # 87.61061946902655 % obj: IRI. Cardinality: {1}
+   bibframe:contribution  xsd:string  *;
+            # 86.72566371681415 % obj: xsd:string. Cardinality: +
+   rdf:type  [bibframe:Text]  ?;
+            # 81.85840707964603 % obj: bibframe:Text. Cardinality: {1}
+   bibframe:adminMetadata  xsd:string  ?;
+            # 81.85840707964603 % obj: xsd:string. Cardinality: {1}
+   bibframe:content  IRI  ?;
+            # 81.85840707964603 % obj: IRI. Cardinality: {1}
+   bibframe:language  IRI  ?;
+            # 81.85840707964603 % obj: IRI. Cardinality: {1}
+   rdf:type  [bibframe:Monograph]  ?;
+            # 81.63716814159292 % obj: bibframe:Monograph. Cardinality: {1}
+   bibframe:subject  IRI  *;
+            # 81.19469026548673 % obj: IRI. Cardinality: +
+   bibframe:language  xsd:string  *;
+            # 80.97345132743364 % obj: xsd:string. Cardinality: +
+   bibframe:note  xsd:string  *
+            # 80.75221238938053 % obj: xsd:string. Cardinality: +
+}
+```
+
+The ShEx schemas has been automatically generated using the tool sheXer:
+
+```
+from shexer.shaper import Shaper
+from shexer.consts import NT, SHEXC, SHACL_TURTLE, TURTLE
+
+target_classes = [
+    "http://id.loc.gov/ontologies/bibframe/Agent",
+    "http://id.loc.gov/ontologies/bibframe/Work"
+]
+
+namespaces_dict = {"http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
+                   "http://example.org/": "ex",
+                   "http://weso.es/shapes/": "",
+                   "http://www.w3.org/2001/XMLSchema#": "xsd",
+                   "http://id.loc.gov/ontologies/bibframe/":"bibframe",
+                   "http://id.loc.gov/ontologies/bflc/":"bflc"
+                   }
+
+shaper = Shaper(target_classes=target_classes,
+                url_endpoint="http://localhost:3330/rdf/sparql",
+                limit_remote_instances=500,
+                namespaces_dict=namespaces_dict,  # Default: no prefixes
+                instantiation_property="http://www.w3.org/1999/02/22-rdf-syntax-ns#type")  # Default rdf:type
+
+output_file = "shaper_bibframe.shex"
+
+shaper.shex_graph(output_file=output_file,
+                  acceptance_threshold=0.8)
+
+print("Done!")
+
 ```
 
 ## References
