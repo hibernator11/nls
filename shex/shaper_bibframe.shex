@@ -1,0 +1,49 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://example.org/>
+PREFIX weso-s: <http://weso.es/shapes/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX bibframe: <http://id.loc.gov/ontologies/bibframe/>
+PREFIX bflc: <http://id.loc.gov/ontologies/bflc/>
+
+weso-s:Agent
+{
+   rdf:type  [bibframe:Agent]  ;                               # 100.0 %
+   rdf:type  [bibframe:Person]  ?;
+            # 98.9556135770235 % obj: bibframe:Person. Cardinality: {1}
+   <http://www.w3.org/2000/01/rdf-schema#label>  xsd:string  *;
+            # 98.9556135770235 % obj: xsd:string. Cardinality: +
+            # 98.69451697127938 % obj: xsd:string. Cardinality: {1}
+   bflc:marcKey  xsd:string  *
+            # 98.9556135770235 % obj: xsd:string. Cardinality: +
+            # 98.69451697127938 % obj: xsd:string. Cardinality: {1}
+}
+
+
+weso-s:Work
+{
+   rdf:type  [bibframe:Work]  ;                                # 100.0 %
+   bibframe:title  xsd:string  +;                              # 100.0 %
+            # 97.56637168141593 % obj: xsd:string. Cardinality: {1}
+   bibframe:hasInstance  IRI  ?;
+            # 87.61061946902655 % obj: IRI. Cardinality: {1}
+   bibframe:contribution  xsd:string  *;
+            # 86.72566371681415 % obj: xsd:string. Cardinality: +
+   rdf:type  [bibframe:Text]  ?;
+            # 81.85840707964603 % obj: bibframe:Text. Cardinality: {1}
+   bibframe:adminMetadata  xsd:string  ?;
+            # 81.85840707964603 % obj: xsd:string. Cardinality: {1}
+   bibframe:content  IRI  ?;
+            # 81.85840707964603 % obj: IRI. Cardinality: {1}
+   bibframe:language  IRI  ?;
+            # 81.85840707964603 % obj: IRI. Cardinality: {1}
+   rdf:type  [bibframe:Monograph]  ?;
+            # 81.63716814159292 % obj: bibframe:Monograph. Cardinality: {1}
+   bibframe:subject  IRI  *;
+            # 81.19469026548673 % obj: IRI. Cardinality: +
+   bibframe:language  xsd:string  *;
+            # 80.97345132743364 % obj: xsd:string. Cardinality: +
+   bibframe:note  xsd:string  *
+            # 80.75221238938053 % obj: xsd:string. Cardinality: +
+}
+
+
