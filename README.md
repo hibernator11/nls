@@ -190,7 +190,7 @@ import lxml.etree as lxml
 import xml.etree.cElementTree as ET
 from xml.etree import ElementTree
 
-ET.register_namespace('marc',"http://www.loc.gov/MARC21/slim") #some name
+ET.register_namespace('marc',"http://www.loc.gov/MARC21/slim")
 
 # add the path to the dataset 
 filename = "../data/nls-nbs-v2/NBS_v2_validated_marcxml.xml"
