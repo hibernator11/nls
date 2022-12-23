@@ -3,3 +3,4 @@ pandas==1.4.4
 pymarc==4.2.0
 rdflib==6.2.0
 folium==0.12.1.post1
+shexer==2.0.3
