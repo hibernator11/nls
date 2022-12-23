@@ -227,10 +227,11 @@ FILTER regex(str(?label), "Stevenson, Robert Louis")
 ```
 
 ## Data quality assessment
-The RDF datasets has been assessed by means of SPARQL in several ways using a data quality criteria provided by previous works. For instance, counting the number of resources per type (e.g., person, organizatioonn, video, etc.) and comparing the results against the original sources. In addition, an innovative method to assess RDF repositories has been used based on [Shape Expressions (ShEx)](https://shexspec.github.io/primer/), a language for describing RDF graph structures. A ShEx schema describes constraints that RDF data graphs must meet in order to be considered conformant. ShEx schemas define the node constraints to assess the triples found in an RDF dataset. A [ShEx schema](/shex/) has been created to describe the resources stored in the final RDF datasets:
+The RDF datasets has been assessed by means of SPARQL in several ways using a data quality criteria (e.g., timeliness, completeness, accuracy, consistency, interlinking, etc.). In addition, an innovative method to assess RDF repositories has been used based on [Shape Expressions (ShEx)](https://shexspec.github.io/primer/), a language for describing RDF graph structures. A ShEx schema describes constraints that RDF data graphs must meet in order to be considered conformant. ShEx schemas define the node constraints to assess the triples found in an RDF dataset. 
 
-- [Moving Image Archive - schema:VideoObject](/shex/shaper_mia.shex)
-- [National Bibliography of Scotland & BOSLIT - bibframe:Agent - bibframe:Work](/shex/shaper_bibframe.shex)
+A collection of [ShEx schemas](/shex/) has been created to describe and assess the resources stored in the final RDF datasets:
+
+- [Moving Image Archive](/shex/shaper_mia.shex): a ShEx schema has been generated for the main class schema:VideoObject.
 
 ```
 shex:VideoObject
@@ -252,6 +253,7 @@ shex:VideoObject
 }
 ```
 
+- [National Bibliography of Scotland & BOSLIT ](/shex/shaper_bibframe.shex): ShEx schemas habe been generated for the classes bibframe:Agent and bibframe:Work.
 
 ```
 shex:Work
@@ -282,7 +284,7 @@ shex:Work
 }
 ```
 
-The ShEx schemas has been automatically generated using the tool sheXer:
+The ShEx schemas has been automatically generated using the tool [sheXer](https://github.com/DaniFdezAlvarez/shexer/). The following example shows how to create the ShEx schemas for the classes `bibframe:Agent` and `bibframe:Work` using as input 500 instances and with a threshold of tolerance value of 0.8 (the minimun percentage of nodes that should conform with a constraint c):
 
 ```
 from shexer.shaper import Shaper
