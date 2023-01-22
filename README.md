@@ -70,7 +70,7 @@ python3 -m pip install -r requirements.txt
 deactivate
 ```
 
-**For Window**
+**For Windows**
 ```
 # Install (if not yet installed) the Python venv (virtual environment) module
 py -m pip install --user virtualenv
