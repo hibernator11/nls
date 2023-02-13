@@ -99,6 +99,8 @@ deactivate
 
 ## Suggested Citations
 
+Gustavo Candela. Towards a semantic approach in GLAM Labs: the case of the Data Foundry at the National Library of Scotland. CoRR abs/2301.11182 (2023)
+https://arxiv.org/abs/2301.11182
 
 
 ## Moving Image Archive
